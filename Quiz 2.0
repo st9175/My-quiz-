@@ -1,0 +1,36 @@
+def main():
+  print("<---Main Menu --->")
+  print("(a) Play Quiz")
+  print("(b) select difficulty")
+  print("(c) High Score")
+  print("(d) quit")
+  #gets the user input
+  choice = input("please select one:")
+
+#do something based on what user typed
+score = 0
+
+
+questions = [("What is the first colour of the rainbow? ?","red"),
+              ("What is the first shade color?","black"),
+              ("What is the 5th color in the rainbow?","blue")]
+
+def ask_questions():
+  score = 0
+  for question in questions:
+    print(question[0])
+    response = input()
+    if response == question[1]:
+      score += 1
+      print("correct")
+    else:
+      print("wrong")
+      
+  return score
+
+while True:
+  score = ask_questions()
+  print("you completed the quiz you score was "+str(score))
+
+
+print("you scored "+str(score))
